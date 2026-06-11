@@ -1,4 +1,3 @@
-# re-scan nudge: dependabot auto-merge verification (2026-06-11)
 version: 2
 updates:
   - package-ecosystem: "npm"

@@ -50,11 +50,13 @@ jobs:
         id: changesets
         uses: changesets/action@v2
         with:
-          version: npm run changeset:version
-          commit: "chore: version packages"
-          title: "chore: version packages"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # v2 ignores the GITHUB_TOKEN env var — the token must be an input. Same
+          # App → PAT → GITHUB_TOKEN chain as checkout, so release commits, tags and
+          # the Version Packages PR are attributed to the release App.
+          github-token: ${{ steps.app-token.outputs.token || secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          version-script: npm run changeset:version
+          commit-message: "chore: version packages"
+          pr-title: "chore: version packages"
 
       - name: Create Git Tags
         if: steps.changesets.outputs.published == 'true'

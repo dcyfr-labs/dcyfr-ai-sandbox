@@ -27,7 +27,7 @@
     "version:major": "npm version major -m 'chore: bump version to %s'",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "changeset:tag": "changeset tag"
+    "changeset:tag": "changeset git-tag"
   },
   "dependencies": {
     "@dcyfr/ai": "^3.0.3"

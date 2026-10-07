@@ -10,7 +10,7 @@ By contributing to this sandbox, you agree that:
 - You have the right to submit the contribution under this license
 - You grant DCYFR Labs perpetual rights to use, modify, and distribute your contribution
 
-**Trademark:** "DCYFR" is a trademark of DCYFR Labs. See [TRADEMARK.md](../TRADEMARK.md)
+**Trademark:** "DCYFR" is a trademark of Drew Gowan. See [TRADEMARK.md](../TRADEMARK.md)
 
 **Questions?** Contact [licensing@dcyfr.ai](mailto:licensing@dcyfr.ai)
 

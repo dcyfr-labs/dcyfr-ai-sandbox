@@ -20,7 +20,7 @@ jobs:
         # Only mint when org-level RELEASE_APP_ID is set. `continue-on-error`
         # makes the workflow degrade-safe: if the App isn't installed on this
         # repo yet, or secrets are missing, mint fails non-fatally and the
-        # fallback chain picks up RELEASE_TOKEN.
+        # token falls back to GITHUB_TOKEN.
         if: ${{ vars.RELEASE_APP_ID != '' }}
         continue-on-error: true
         uses: actions/create-github-app-token@v3
@@ -32,11 +32,11 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
-          # PAT with `workflow` scope when available — GITHUB_TOKEN cannot push
+          # Release App token when available — GITHUB_TOKEN cannot push
           # tags on commits touching .github/workflows/* (server-side reject).
           # The explicit `git push --follow-tags` step below also picks up this
           # token via the auth checkout sets up. Falls back cleanly.
-          token: ${{ steps.app-token.outputs.token || secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js 24.x
         uses: actions/setup-node@v7
@@ -51,9 +51,9 @@ jobs:
         uses: changesets/action@v2
         with:
           # v2 ignores the GITHUB_TOKEN env var — the token must be an input. Same
-          # App → PAT → GITHUB_TOKEN chain as checkout, so release commits, tags and
+          # App → GITHUB_TOKEN chain as checkout, so release commits, tags and
           # the Version Packages PR are attributed to the release App.
-          github-token: ${{ steps.app-token.outputs.token || secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          github-token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
           version-script: npm run changeset:version
           commit-message: "chore: version packages"
           pr-title: "chore: version packages"

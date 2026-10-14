@@ -7,17 +7,12 @@ Welcome to the DCYFR AI Sandbox! This repository is your playground for experime
 
 ### 1. Install Dependencies
 
-From the workspace root:
-```bash
-cd ${WORKSPACE_ROOT}
-npm install
-```
-
-Or from this directory:
 ```bash
 cd dcyfr-ai-sandbox
 npm install
 ```
+
+Requires Node `>=24.13.0` and npm `>=11.6.2`.
 
 ### 2. Run Examples
 
@@ -37,7 +32,7 @@ npm run example:agents
 ### 3. Run Tests
 
 ```bash
-# Run all tests
+# Run all tests once
 npm run test:run
 
 # Watch mode for development
@@ -49,25 +44,15 @@ npm run test:coverage
 
 ## 📚 What's Inside
 
-- **examples/** - Ready-to-run examples demonstrating framework features
-- **tests/** - Test suites for validation and experimentation
-- **src/** - Utilities and helpers for building custom solutions
+- **examples/** - Three small scripts (`basic-usage.js` runs `PluginLoader`; the other two are stubs)
+- **tests/** - A placeholder integration suite
+
+There is no `src/` directory yet.
 
 ## 🧪 Experimentation Areas
 
 ### Plugin Development
-Create custom validators and plugins:
-```typescript
-import { createPlugin } from '@dcyfr/ai';
-
-const myValidator = createPlugin({
-  name: 'my-custom-validator',
-  validate: async (context) => {
-    // Your validation logic
-    return { valid: true, issues: [] };
-  }
-});
-```
+Load plugins through `PluginLoader` and check them with `ValidationFramework` (both exported by `@dcyfr/ai`). See the plugin guide linked below for the plugin interface.
 
 ### Agent Patterns
 Experiment with different agent implementations:
@@ -81,13 +66,12 @@ const loader = new PluginLoader({
 ```
 
 ### Performance Testing
-Benchmark framework operations and optimize workflows.
+No benchmark scripts exist yet; add your own under a `benchmarks/` directory.
 
 ## 🔗 Resources
 
-- [Main Documentation](../dcyfr-ai/README.md)
-- [Plugin System Guide](../dcyfr-ai/docs/PLUGINS.md)
-- [Workspace Guide](../WORKSPACE.md)
+- [Main Documentation](https://github.com/dcyfr-labs/dcyfr-ai/blob/main/README.md)
+- [Plugin System Guide](https://github.com/dcyfr-labs/dcyfr-ai/blob/main/docs/PLUGINS.md)
 
 ## 💡 Tips
 
@@ -98,9 +82,9 @@ Benchmark framework operations and optimize workflows.
 
 ## 🤝 Need Help?
 
-- Check the main [@dcyfr/ai documentation](../dcyfr-ai)
-- Review existing [examples](./examples)
-- Explore the [test suite](./tests)
+- Check the main [@dcyfr/ai documentation](https://github.com/dcyfr-labs/dcyfr-ai)
+- Review existing [examples](../examples)
+- Explore the [test suite](../tests)
 
 ---
 

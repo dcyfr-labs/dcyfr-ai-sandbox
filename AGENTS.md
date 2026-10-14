@@ -2,7 +2,7 @@
 
 **AI Framework Experimentation Sandbox**
 
-Version: 1.0.0  
+Version: 1.0.1  
 Type: Sandbox/Testing environment  
 License: MIT
 
@@ -27,26 +27,15 @@ This is a **safe experimentation environment** for:
 
 ## 🏗️ Sandbox Structure
 
+What exists today:
+
 ```
-src/
-├── experiments/        # Experimental features
-│   ├── multi-agent/   # Multi-agent workflows
-│   ├── streaming/     # Streaming responses
-│   ├── rag/           # RAG implementations
-│   └── fine-tuning/   # Model fine-tuning
-├── benchmarks/         # Performance benchmarks
-│   ├── provider-comparison.ts
-│   ├── latency-tests.ts
-│   └── token-usage.ts
-├── prototypes/         # Prototype agents
-│   ├── code-reviewer/
-│   ├── bug-finder/
-│   └── optimizer/
-└── examples/           # Usage examples
-    ├── basic-usage.ts
-    ├── plugin-system.ts
-    └── advanced-patterns.ts
+examples/           # basic-usage.js (runnable), plugin-system.js and agent-patterns.js (stubs)
+tests/integration/  # framework.test.ts (placeholder suite)
+docs/               # GETTING-STARTED.md
 ```
+
+There is no `src/` directory. Create `src/experiments/`, `src/prototypes/` or similar when you add real experiments; the layouts and code sketches later in this file describe intended directions, not existing code.
 
 ---
 
@@ -111,6 +100,8 @@ async function benchmarkAgent(agent: BaseAgent, iterations: number) {
 ---
 
 ## 🔬 Experiment Categories
+
+> **Sketches, not working code.** The snippets from here through "Prototype Agents" are illustrative. `AgentFramework`, `RAGAgent`, `StreamingAgent`, `CodeGeneratorAgent`, `BaseAgent`, `createPlugin` and the `OpenAIProvider`/`AnthropicProvider`/`OllamaProvider` classes are not exported by `@dcyfr/ai`. Check the exports of the version you have installed (for example `PluginLoader`, `ValidationFramework`, `TelemetryEngine`, `AgentRuntime`, `ProviderRegistry`) before building on a sketch.
 
 ### 1. Provider Comparisons
 
@@ -212,29 +203,7 @@ for await (const chunk of stream) {
 
 ## 📊 Benchmarking
 
-### Performance Benchmarks
-
-```bash
-# Run all benchmarks
-npm run benchmark
-
-# Specific benchmark
-npm run benchmark:providers
-npm run benchmark:latency
-npm run benchmark:tokens
-```
-
-### Example Benchmark Output
-
-```
-┌─────────────┬──────────┬────────┬────────┬─────────┐
-│ Provider    │ Mean (ms)│ P95 (ms)│ Tokens │ Cost ($)│
-├─────────────┼──────────┼────────┼────────┼─────────┤
-│ OpenAI GPT-4│    1,234 │  1,456 │    512 │  0.0154 │
-│ Claude Opus │      987 │  1,123 │    498 │  0.0149 │
-│ Llama2      │      234 │    298 │    524 │  0.0000 │
-└─────────────┴──────────┴────────┴────────┴─────────┘
-```
+There are no benchmark scripts or `benchmarks/` directory yet. To add one, put the script under `benchmarks/` and add the matching `package.json` script (for example `"benchmark": "tsx benchmarks/run.ts"`), then document it here. The timing helper under "Benchmark Everything" above is a starting point.
 
 ---
 
@@ -315,11 +284,14 @@ Provide:
 ## 🔧 Testing
 
 ```bash
-# Run all tests
+# Run all tests (watch mode)
 npm run test
 
-# Run specific experiment tests
-npm run test -- src/experiments/multi-agent
+# Run once
+npm run test:run
+
+# Run one file
+npm run test:run -- tests/integration/framework.test.ts
 
 # Watch mode
 npm run test:watch
@@ -389,9 +361,9 @@ This sandbox is open for experimentation:
 
 ## 🔗 Related Resources
 
-- [@dcyfr/ai Framework](../dcyfr-ai/README.md)
-- [@dcyfr/agents](../dcyfr-ai-agents/README.md)
-- [Getting Started](GETTING_STARTED.md)
+- [@dcyfr/ai Framework](https://github.com/dcyfr-labs/dcyfr-ai)
+- [@dcyfr/ai-agents template](https://github.com/dcyfr-labs/dcyfr-ai-agents)
+- [Getting Started](docs/GETTING-STARTED.md)
 - [Contributing](CONTRIBUTING.md)
 
 ---

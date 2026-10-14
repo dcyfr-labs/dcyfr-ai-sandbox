@@ -8,20 +8,20 @@
   last_validated: 2026-07-11
 -->
 
-> **🔒 INTERNAL TESTING INFRASTRUCTURE (Not for Public Use)**  
-> This is internal experimentation infrastructure for the DCYFR workspace.  
-> **Status:** Never published to npm (marked `"private": true`)  
+> **Experimental and unsupported**  
+> This repository is public, but it is scratch space for the DCYFR Labs team, not a supported template or product.  
+> **Status:** Never published to npm (marked `"private": true`). No stability or support guarantees.  
 > **Purpose:** Scratch space for exercising `@dcyfr/ai` — examples and integration test scaffolding  
-> **Not suitable for:** Production use, external projects, public consumption
+> **Not suitable for:** Production use or as a dependency. You are welcome to read it and borrow ideas.
 
 [![CI](https://github.com/dcyfr-labs/dcyfr-ai-sandbox/actions/workflows/ci.yml/badge.svg)](https://github.com/dcyfr-labs/dcyfr-ai-sandbox/actions/workflows/ci.yml)
-[![Private](https://img.shields.io/badge/Status-Internal%20Only-red?style=flat-square)](https://github.com/dcyfr-labs/dcyfr-ai-sandbox)
+[![Status: Experimental](https://img.shields.io/badge/Status-Experimental-orange?style=flat-square)](https://github.com/dcyfr-labs/dcyfr-ai-sandbox)
 
-Version: 1.0.1 (internal)
+Version: 1.0.1 (experimental, unpublished)
 
 ## About DCYFR
 
-`@dcyfr/ai-sandbox` is maintained by **DCYFR Labs** as part of the DCYFR internal experimentation portfolio.
+`@dcyfr/ai-sandbox` is maintained by **DCYFR Labs** as part of its experimentation portfolio.
 
 - **DCYFR** is a trademark of Drew Gowan.
 - Primary domain: [www.dcyfr.ai](https://www.dcyfr.ai)
@@ -185,7 +185,7 @@ MIT — see [LICENSE](./LICENSE).
 
 - [@dcyfr/ai](https://github.com/dcyfr-labs/dcyfr-ai) — Core AI framework
 - [@dcyfr/workspace-agents](https://github.com/dcyfr-labs/dcyfr-workspace-agents) — Validation plugins
-- [dcyfr-labs](https://github.com/dcyfr-labs/dcyfr-labs) — Main application
+- [DCYFR Labs](https://www.dcyfr.ai) — Main application
 
 ---
 

@@ -56,6 +56,10 @@ npm run lint
 - Keep examples simple and focused
 - Document complex logic
 
+## Code of Conduct
+
+Participation is governed by the DCYFR Labs [Code of Conduct](https://github.com/dcyfr-labs/.github/blob/main/CODE_OF_CONDUCT.md). Report unacceptable behavior to conduct@dcyfr.ai.
+
 ## Questions?
 
 Open an issue or discussion on GitHub!
